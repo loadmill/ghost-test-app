@@ -12,6 +12,7 @@
   "dependencies": {
     "casper": "TryGhost/Casper#1.3.4",
     "express": "4.14.0",
+    "express-loadmill": "^0.1.4",
     "ghost": "0.11.3",
     "ghost-s3-storage-adapter": "3.0.4",
     "ncp": "^2.0.0",

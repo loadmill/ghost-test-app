@@ -1,11 +1,26 @@
 var path = require('path');
 var ghost = require('ghost');
 var express = require('express');
+var Loadmill = require('express-loadmill');
 var parentApp = express();
 
 ghost({
   config: path.join(__dirname, 'config.js')
 }).then(function (ghostServer) {
+
+    parentApp.use(Loadmill({
+        verifyToken: "not-used",
+     
+        monitor: {
+            // Required:
+            apiToken: process.env.LOADMILL_API_TOKEN,
+     
+            // Default is TRUE:
+            enabled: process.env.ENABLE_LOADMILL_MONITORING
+        }
+    }));
+    
+    /* The old way, before express-loadmill middleware
 
     // Allow CORS
     parentApp.use(function (req, res, next) {
@@ -38,6 +53,8 @@ ghost({
             "Access-Control-Allow-Headers": allowedHeaders
         });
     }
+
+    */
 
     // for automatic domain verification we always echo the challenge file name
     parentApp.use("/loadmill-challenge/:fileName",function (req, res) {
