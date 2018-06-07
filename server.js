@@ -6,6 +6,8 @@ var parentApp = express();
 ghost({
   config: path.join(__dirname, 'config.js')
 }).then(function (ghostServer) {
+
+    // Allow CORS
     parentApp.use(function (req, res, next) {
         var origin = req.header("Origin");
         var requestMethod = req.header("Access-Control-Request-Method");
@@ -36,6 +38,12 @@ ghost({
             "Access-Control-Allow-Headers": allowedHeaders
         });
     }
+
+    // for automatic domain verification we always echo the challenge file name
+    parentApp.use("/loadmill-challenge/:fileName",function (req, res) {
+        const fileName = req.params.fileName;
+        res.send(fileName.substr(0, fileName.length - 4));
+    });
 
     parentApp.use(ghostServer.config.paths.subdir, ghostServer.rootApp);
     ghostServer.start(parentApp);

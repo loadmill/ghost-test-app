@@ -1,12 +1,14 @@
 # [Ghost](https://github.com/TryGhost/Ghost) on [Heroku](http://heroku.com)
 
+Copied/Forked from cobyism/ghost-on-heroku
+
 Ghost is a free, open, simple blogging platform. Visit the project's website at <http://ghost.org>, or read the docs on <http://support.ghost.org>.
 
 ## Deploying on Heroku
 
 To get your own Ghost blog running on Heroku, click the button below:
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/cobyism/ghost-on-heroku)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/idoco/ghost-test-app)
 
 Fill out the form, and you should be cooking with gas in a few seconds.
 
