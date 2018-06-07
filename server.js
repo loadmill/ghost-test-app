@@ -2,6 +2,7 @@ var path = require('path');
 var ghost = require('ghost');
 var express = require('express');
 var Loadmill = require('express-loadmill');
+var monitor = require('loadmill-monitor');
 var parentApp = express();
 
 ghost({
