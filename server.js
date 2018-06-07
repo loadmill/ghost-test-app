@@ -11,13 +11,13 @@ ghost({
     parentApp.use(Loadmill({
         verifyToken: "not-used",
      
-        monitor: {
-            // Required:
-            apiToken: process.env.LOADMILL_API_TOKEN,
+        // monitor: {
+        //     // Required:
+        //     apiToken: process.env.LOADMILL_API_TOKEN,
      
-            // Default is TRUE:
-            enabled: process.env.ENABLE_LOADMILL_MONITORING
-        }
+        //     // Default is TRUE:
+        //     enabled: process.env.ENABLE_LOADMILL_MONITORING
+        // }
     }));
     
     /* The old way, before express-loadmill middleware
