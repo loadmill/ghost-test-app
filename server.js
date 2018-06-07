@@ -2,7 +2,6 @@ var path = require('path');
 var ghost = require('ghost');
 var express = require('express');
 var Loadmill = require('express-loadmill');
-var monitor = require('loadmill-monitor');
 var parentApp = express();
 
 ghost({
@@ -12,13 +11,12 @@ ghost({
     parentApp.use(Loadmill({
         verifyToken: "not-used",
      
-        monitor: {
-            // Required:
-            apiToken: process.env.LOADMILL_API_TOKEN,
-     
-            // Default is TRUE:
-            enabled: process.env.ENABLE_LOADMILL_MONITORING
-        }
+        // monitor: {
+        //     // Required:
+        //     apiToken: process.env.LOADMILL_API_TOKEN,
+        //     // Default is TRUE:
+        //     enabled: process.env.ENABLE_LOADMILL_MONITORING
+        // }
     }));
     
     /* The old way, before express-loadmill middleware
