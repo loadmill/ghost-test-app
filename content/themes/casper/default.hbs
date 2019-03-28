@@ -49,9 +49,9 @@
     {{!-- The main JavaScript file for Casper --}}
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
 
-    <script> window.loadmillUserId = "21" </script>
+    <script type="text/javascript"> window.loadmillUserId = "21" </script>
 
-    <script>
+    <script type="text/javascript">
         if ('serviceWorker' in navigator) {
             var swUrl = `worker.js?loadmillUserId=${window.loadmillUserId}&notSecure=true`;
             window.addEventListener('load', function() {
