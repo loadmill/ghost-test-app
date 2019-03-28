@@ -27,7 +27,6 @@
 
     {{!-- The blog navigation links --}}
     {{navigation}}
-
     <div class="site-wrapper">
 
         {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
@@ -50,5 +49,21 @@
     {{!-- The main JavaScript file for Casper --}}
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
 
+    <script> window.loadmillUserId = "21" </script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            var swUrl = `worker.js?loadmillUserId=${window.loadmillUserId}&notSecure=true`;
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register(swUrl).then(function(registration) {
+                    // Registration was successful
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function(err) {
+                    // registration failed :/
+                    console.log('ServiceWorker registration failed: ', err);
+                    });
+                });
+        }
+    </script>
 </body>
 </html>
