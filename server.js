@@ -61,9 +61,13 @@ ghost({
         res.send(fileName.substr(0, fileName.length - 4));
     });
 
-    parentApp.use('*/loadmill-worker.js', express.static(path.join(__dirname, 'static/sw-bundle.js')))
-    parentApp.use('*/inject.js', express.static(path.join(__dirname, './inject.js')))
+    // parentApp.use('/loadmill-worker.js', express.static(path.join(__dirname, 'static/sw-bundle.js')))
+    // parentApp.use('/inject.js', express.static(path.join(__dirname, './inject.js')))
 
     parentApp.use(ghostServer.config.paths.subdir, ghostServer.rootApp);
+  
+    parentApp.use('*/loadmill-worker.js', express.static(path.join(__dirname, 'static/sw-bundle.js')))
+    parentApp.use('*/inject.js', express.static(path.join(__dirname, './inject.js')))
+  
     ghostServer.start(parentApp);
 });
