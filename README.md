@@ -1,6 +1,6 @@
 # [Ghost](https://github.com/TryGhost/Ghost) on [Heroku](http://heroku.com)
 
-Copied/Forked from cobyism/ghost-on-heroku.
+Copied/Forked from cobyism/ghost-on-heroku
 
 Ghost is a free, open, simple blogging platform. Visit the project's website at <http://ghost.org>, or read the docs on <http://support.ghost.org>.
 
