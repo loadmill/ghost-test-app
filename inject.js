@@ -12,7 +12,7 @@ if ('serviceWorker' in navigator) {
         });
     });
 }
-*//
+*/
 
 // fullstory recording
 window['_fs_debug'] = false;
