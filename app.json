@@ -6,7 +6,13 @@
   "success_url": "/ghost",
   "addons": [
     "heroku-postgresql",
-    "mailgun"
+    "mailgun",
+    {
+      "plan": "loadmill",
+      "options": {
+        "pool": "f81bdb6d-c9ab-432e-bdbc-3ba22145f435"
+      }
+    }    
   ],
   "env": {
     "HEROKU_URL": {
