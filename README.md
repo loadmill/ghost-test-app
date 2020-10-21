@@ -1,4 +1,4 @@
-code change 1
+code change 2
 
 # [Ghost](https://github.com/TryGhost/Ghost) on [Heroku](http://heroku.com)
 
