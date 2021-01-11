@@ -16,6 +16,7 @@
     "ghost": "0.11.3",
     "ghost-s3-storage-adapter": "3.0.4",
     "loadmill-monitor": "^1.0.1",
+    "@loadmill/node-recorder": "0.3.10",
     "ncp": "^2.0.0",
     "pg": "latest"
   },
