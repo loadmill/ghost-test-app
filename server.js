@@ -3,6 +3,8 @@ var ghost = require('ghost');
 var express = require('express');
 var Loadmill = require('express-loadmill');
 var parentApp = express();
+var expressRecorder = require('@loadmill/node-recorder');
+
 
 ghost({
   config: path.join(__dirname, 'config.js')
@@ -65,5 +67,6 @@ ghost({
     parentApp.use('/inject.js', express.static(path.join(__dirname, './inject.js')))
 
     parentApp.use(ghostServer.config.paths.subdir, ghostServer.rootApp);
+    parentApp.use(expressRecorder({ loadmillCode: "9c18750e-5978-4540-b953-e339c07f5e99" }));
     ghostServer.start(parentApp);
 });
