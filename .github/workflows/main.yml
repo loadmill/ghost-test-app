@@ -22,12 +22,12 @@ jobs:
   
       # Runs a single command using the runners shell
       - name: Update source code
-        run: echo "GitHub action run $GITHUB_RUN_NUMBER from GITHUB_ACTOR"> hook.js
+        run: echo "GitHub action run $GITHUB_RUN_NUMBER from $GITHUB_ACTOR"> hook.js
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v7
         with:
-          message: "Commit $GITHUB_ACTOR $GITHUB_RUN_NUMBER"
+          message: "Commit ${{ github.actor }} ${{ github.run_number }}"
           branch: 'hook'
           add: '*.js'
           push: true
