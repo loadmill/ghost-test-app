@@ -30,6 +30,6 @@ jobs:
         uses: EndBug/add-and-commit@v7
         with:
           message: 'Commit $GITHUB_RUN_NUMBER'
-          barnch: 'hook'
+          branch: 'hook'
           add: '*.js'
           push: true
