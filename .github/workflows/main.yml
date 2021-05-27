@@ -5,7 +5,7 @@ name: 'hooks action'
 # Controls when the action will run. 
 on: 
   schedule:
-  - cron: '*/5 * * * *'
+  - cron: '0 0 * * *'
   
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -27,7 +27,7 @@ jobs:
       - name: Commit changes
         uses: EndBug/add-and-commit@v7
         with:
-          message: "Commit ${{ github.actor }} ${{ github.run_number }}"
+          message: "Commit ${{ github.run_number }} by ${{ github.actor }}"
           branch: 'hook'
           add: '*.js'
           push: true
